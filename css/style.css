@@ -47,3 +47,12 @@ body {
 .search-results a {
   color: wheat;
 }
+
+.search-area .random-link {
+  background: wheat;
+  cursor: pointer;
+  color: #333;
+  padding: 10px;
+  margin-left: 5px;
+  text-decoration: none;
+}

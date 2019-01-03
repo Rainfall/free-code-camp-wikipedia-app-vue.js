@@ -26,6 +26,7 @@
            @keyup.enter="searchWiki()"
            v-model="searchWord">
     <button @click="searchWiki()">Search Wiki</button>
+    <a class="random-link" target="_blank" href="https://en.wikipedia.org/wiki/Special:Random">Random Article</a>
   </div>
   <div class="search-results" v-if="searchResults.length > 0">
     <h2 class="text-center">Search results for "{{searchResults[0]}}"</h2>
