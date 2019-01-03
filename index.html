@@ -20,6 +20,30 @@
  'backgroundSize': 'cover'
 }" > 
   <h1>Free code camp Wikipedia app</h1>
+  <div class="search-area flexed flexed--center">
+    <input placeholder="search input" 
+           type="text"
+           @keyup.enter="searchWiki()"
+           v-model="searchWord">
+    <button @click="searchWiki()">Search Wiki</button>
+  </div>
+  <div class="search-results" v-if="searchResults.length > 0">
+    <h2 class="text-center">Search results for "{{searchResults[0]}}"</h2>
+    <div class="search-results-wrapper">
+      <div class="search-result-item"
+           v-for="(item, index) in searchResults[1]">
+        <h3>{{index+1}}. {{item}}</h3>
+        <p>{{searchResults[2][index]}}</p>
+        <div class="wiki-link">
+          <a target="_blank" 
+             :href="searchResults[3][index]">
+            More about {{item}}
+          </a>
+        </div>
+        <hr>
+      </div>
+    </div>
+  </div>
 </div>
   <script src='https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.17/vue.min.js'></script>
 <script src='https://cdnjs.cloudflare.com/ajax/libs/vue-resource/1.2.0/vue-resource.js'></script>
